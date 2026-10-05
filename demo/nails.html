@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เนลส์ บาย มิ้นท์ | ทำเล็บ ต่อขนตา</title>
+<meta name="description" content="ร้านทำเล็บเจล ต่อขนตา บรรยากาศอบอุ่น ย่านสุขุมวิท จองคิวง่ายผ่าน LINE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf6f3;
+    --bg-alt: #f8e9e4;
+    --ink: #4a3532;
+    --muted: #9a7f79;
+    --rose: #d98c94;
+    --rose-deep: #b8646f;
+    --blush: #f4d3d1;
+    --nude: #e8c9b9;
+    --cream: #fffaf8;
+    --gold: #c9a27e;
+    --line: #06c755;
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --shadow: 0 10px 30px rgba(184, 100, 111, .12);
+    --gutter: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Kanit", sans-serif; font-weight: 300;
+    background: var(--bg); color: var(--ink); line-height: 1.65;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 var(--gutter); }
+  h1, h2, h3 { font-weight: 500; line-height: 1.25; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(253, 246, 243, .88); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--blush);
+  }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
+  .logo { font-weight: 600; font-size: 20px; color: var(--rose-deep); letter-spacing: .5px; white-space: nowrap; }
+  .logo span { color: var(--gold); font-weight: 300; }
+  .nav { display: none; gap: 24px; font-size: 15px; color: var(--muted); }
+  .nav a:hover { color: var(--rose-deep); }
+  .call-chip {
+    font-size: 14px; font-weight: 500; color: var(--rose-deep);
+    border: 1.5px solid var(--rose); border-radius: 99px; padding: 6px 14px; white-space: nowrap;
+  }
+
+  /* ---------- Hero (split, rounded panel) ---------- */
+  .hero { padding: 24px 0 8px; }
+  .hero-card {
+    position: relative; overflow: hidden; border-radius: var(--radius-lg);
+    background: linear-gradient(150deg, #fbe4e1 0%, #f6d6cf 45%, #ecc3b5 100%);
+    padding: 36px 24px 32px; display: grid; gap: 28px;
+  }
+  .hero-card::before, .hero-card::after {
+    content: ""; position: absolute; border-radius: 50%; pointer-events: none;
+  }
+  .hero-card::before { width: 220px; height: 220px; right: -70px; top: -70px; background: rgba(255, 255, 255, .35); }
+  .hero-card::after { width: 140px; height: 140px; left: -50px; bottom: -50px; background: rgba(217, 140, 148, .18); }
+  .hero-text { position: relative; z-index: 1; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--cream); color: var(--rose-deep);
+    font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 99px; margin-bottom: 16px;
+  }
+  .hero h1 { font-size: clamp(34px, 9vw, 56px); color: var(--ink); }
+  .hero h1 em { font-style: normal; color: var(--rose-deep); }
+  .hero p { margin: 14px 0 24px; color: #6d5450; font-size: 16px; max-width: 460px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 24px; border-radius: 99px; font-weight: 500; font-size: 16px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-line { background: var(--line); color: #fff; box-shadow: 0 8px 20px rgba(6, 199, 85, .3); }
+  .btn-soft { background: var(--cream); color: var(--rose-deep); }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hero-btns .btn { flex: 1 1 160px; }
+
+  .hero-visual { position: relative; z-index: 1; display: flex; justify-content: center; }
+  .hand {
+    display: flex; gap: 10px; align-items: flex-end; padding: 22px 26px 26px;
+    background: rgba(255, 250, 248, .7); border-radius: 999px 999px 40px 40px;
+  }
+  .nail {
+    width: 34px; border-radius: 18px 18px 10px 10px;
+    box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .06), 0 4px 10px rgba(184, 100, 111, .2);
+  }
+  .nail:nth-child(1) { height: 62px; background: linear-gradient(180deg, #f7c8cc, #d98c94); }
+  .nail:nth-child(2) { height: 84px; background: linear-gradient(180deg, #fff, #f4d3d1 60%, #fff 61%); }
+  .nail:nth-child(3) { height: 92px; background: linear-gradient(180deg, #e8c9b9, #c9a27e); }
+  .nail:nth-child(4) { height: 80px; background: radial-gradient(circle at 50% 35%, #fff 0 5px, transparent 6px), linear-gradient(180deg, #f4d3d1, #b8646f); }
+  .nail:nth-child(5) { height: 54px; background: linear-gradient(180deg, #fbe4e1, #e8b5ae); }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; }
+  .stat { background: var(--cream); border-radius: var(--radius-md); padding: 12px 6px; text-align: center; }
+  .stat b { display: block; font-weight: 600; font-size: 20px; color: var(--rose-deep); }
+  .stat span { font-size: 12px; color: var(--muted); }
+
+  /* ---------- Section base ---------- */
+  section { padding: 56px 0; }
+  .sec-head { text-align: center; margin-bottom: 28px; }
+  .sec-head small { display: block; color: var(--gold); letter-spacing: 3px; font-size: 12px; font-weight: 500; text-transform: uppercase; }
+  .sec-head h2 { font-size: clamp(26px, 6.5vw, 34px); margin-top: 4px; }
+  .sec-head p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+
+  /* ---------- Price list (menu style) ---------- */
+  .price-tabs { display: grid; gap: 18px; }
+  .price-group {
+    background: var(--cream); border-radius: var(--radius-lg); padding: 22px 20px;
+    box-shadow: var(--shadow); border: 1px solid var(--blush);
+  }
+  .price-group h3 {
+    font-size: 18px; color: var(--rose-deep); display: flex; align-items: center; gap: 8px;
+    padding-bottom: 12px; margin-bottom: 6px; border-bottom: 1px dashed var(--nude);
+  }
+  .row { display: flex; align-items: baseline; gap: 8px; padding: 12px 0; }
+  .row + .row { border-top: 1px solid #f6e6e1; }
+  .row .name { font-weight: 400; }
+  .row .note { display: block; font-size: 13px; color: var(--muted); }
+  .row .dots { flex: 1; border-bottom: 2px dotted var(--nude); transform: translateY(-4px); min-width: 16px; }
+  .row .price { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .hot { font-size: 11px; background: var(--rose); color: #fff; border-radius: 6px; padding: 1px 7px; margin-left: 4px; vertical-align: 2px; font-weight: 400; }
+  .price-foot { text-align: center; color: var(--muted); font-size: 13px; margin-top: 16px; }
+
+  /* ---------- Promo ---------- */
+  .promo { padding: 8px 0 0; }
+  .promo-box {
+    position: relative; overflow: hidden; border-radius: var(--radius-lg); color: #fff;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(255, 255, 255, .25) 0 60px, transparent 61px),
+      radial-gradient(circle at 10% 90%, rgba(255, 255, 255, .15) 0 80px, transparent 81px),
+      linear-gradient(120deg, var(--rose-deep), var(--rose) 60%, #e7a9a4);
+    padding: 30px 24px; display: grid; gap: 18px; align-items: center;
+  }
+  .promo-box .pct { font-size: clamp(54px, 16vw, 80px); font-weight: 600; line-height: 1; }
+  .promo-box .pct sup { font-size: .4em; vertical-align: top; }
+  .promo-box h3 { font-size: 22px; }
+  .promo-box p { opacity: .92; font-size: 15px; margin-top: 4px; }
+  .promo-box .code {
+    display: inline-block; margin-top: 12px; padding: 6px 14px; border-radius: 10px;
+    border: 1.5px dashed rgba(255, 255, 255, .8); font-weight: 500; letter-spacing: 1px; font-size: 14px;
+  }
+  .promo-box .btn { background: #fff; color: var(--rose-deep); width: 100%; }
+
+  /* ---------- Gallery ---------- */
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 120px; gap: 10px; }
+  .tile {
+    position: relative; border-radius: var(--radius-md); overflow: hidden;
+    display: flex; align-items: flex-end; padding: 10px;
+  }
+  .tile span {
+    position: relative; z-index: 1; font-size: 12px; font-weight: 400; color: var(--ink);
+    background: rgba(255, 250, 248, .85); padding: 3px 10px; border-radius: 99px;
+  }
+  .tile.tall { grid-row: span 2; }
+  .tile.wide { grid-column: span 2; }
+  .g1 { background: linear-gradient(160deg, #fbe4e1, #d98c94); }
+  .g2 { background: repeating-linear-gradient(45deg, #f4d3d1 0 14px, #fffaf8 14px 28px); }
+  .g3 { background: radial-gradient(circle at 30% 30%, #fff 0 8%, transparent 9%), radial-gradient(circle at 70% 60%, #fff 0 6%, transparent 7%), linear-gradient(135deg, #e8c9b9, #c9a27e); }
+  .g4 { background: linear-gradient(180deg, #fffaf8 0 55%, #b8646f 55% 100%); }
+  .g5 { background: conic-gradient(from 200deg at 50% 60%, #f4d3d1, #e8b5ae, #c9a27e, #f4d3d1); }
+  .g6 { background: radial-gradient(circle at 20% 50%, #d98c94 0 18px, transparent 19px), radial-gradient(circle at 50% 50%, #e8c9b9 0 18px, transparent 19px), radial-gradient(circle at 80% 50%, #b8646f 0 18px, transparent 19px), #fbe4e1; }
+  .g7 { background: linear-gradient(120deg, #fdf6f3, #f4d3d1 40%, #e8c9b9 70%, #fdf6f3); }
+
+  /* ---------- Hours + Contact ---------- */
+  .visit { background: var(--bg-alt); }
+  .visit-grid { display: grid; gap: 16px; }
+  .card { background: var(--cream); border-radius: var(--radius-lg); padding: 24px 20px; box-shadow: var(--shadow); }
+  .card h3 { font-size: 19px; color: var(--rose-deep); margin-bottom: 12px; }
+  .hours { list-style: none; }
+  .hours li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f6e6e1; font-size: 15px; }
+  .hours li:last-child { border-bottom: 0; }
+  .hours .off { color: var(--rose-deep); font-weight: 400; }
+  .open-now {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #3c8a5a;
+    background: #e6f5ec; padding: 4px 12px; border-radius: 99px; margin-bottom: 8px;
+  }
+  .open-now::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #3cb371; }
+  .contact-list { list-style: none; display: grid; gap: 12px; }
+  .contact-list li { display: flex; gap: 12px; align-items: flex-start; }
+  .ico {
+    flex: 0 0 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+    background: var(--blush); font-size: 18px;
+  }
+  .contact-list small { display: block; color: var(--muted); font-size: 12px; }
+  .contact-list a, .contact-list p { font-weight: 400; word-break: break-word; }
+  .map-ph {
+    margin-top: 16px; height: 150px; border-radius: var(--radius-md);
+    background:
+      linear-gradient(90deg, transparent 48%, #fff 48% 52%, transparent 52%),
+      linear-gradient(0deg, transparent 46%, #fff 46% 50%, transparent 50%),
+      linear-gradient(135deg, #f4e4dc, #ead3c8);
+    display: grid; place-items: center; color: var(--rose-deep); font-size: 14px; font-weight: 400;
+  }
+  .card .btn { width: 100%; margin-top: 18px; }
+
+  /* ---------- Footer & floating ---------- */
+  footer { text-align: center; padding: 32px 0 110px; color: var(--muted); font-size: 13px; }
+  footer .logo { display: block; margin-bottom: 6px; font-size: 18px; }
+  .float-line {
+    position: fixed; right: 16px; bottom: 16px; z-index: 30;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--line); color: #fff; display: grid; place-items: center;
+    font-weight: 600; font-size: 13px; box-shadow: 0 8px 24px rgba(6, 199, 85, .4);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(6, 199, 85, .4), 0 0 0 0 rgba(6, 199, 85, .35); }
+    50% { box-shadow: 0 8px 24px rgba(6, 199, 85, .4), 0 0 0 12px rgba(6, 199, 85, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .float-line { animation: none; } html { scroll-behavior: auto; } }
+
+  /* ---------- Larger screens ---------- */
+  @media (min-width: 720px) {
+    .nav { display: flex; }
+    .hero-card { grid-template-columns: 1.2fr 1fr; align-items: center; padding: 56px 48px; }
+    .hero-btns .btn { flex: 0 0 auto; }
+    .price-tabs { grid-template-columns: 1fr 1fr; }
+    .promo-box { grid-template-columns: auto 1fr auto; padding: 36px 40px; gap: 28px; }
+    .promo-box .btn { width: auto; }
+    .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 150px; }
+    .visit-grid { grid-template-columns: 1fr 1.2fr; }
+    section { padding: 72px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#top">Nails <span>by</span> Mint</a>
+    <nav class="nav" aria-label="เมนูหลัก">
+      <a href="#services">บริการ</a>
+      <a href="#promo">โปรโมชั่น</a>
+      <a href="#gallery">ผลงาน</a>
+      <a href="#visit">ติดต่อ</a>
+    </nav>
+    <a class="call-chip" href="tel:0812345678">📞 โทรเลย</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero" aria-label="แนะนำร้าน">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="hero-text">
+          <span class="eyebrow">💅 ทำเล็บ · ต่อขนตา · สปามือ</span>
+          <h1>เนลส์ บาย มิ้นท์<br><em>สวยละมุน</em> ทุกปลายนิ้ว</h1>
+          <p>ร้านทำเล็บเล็ก ๆ บรรยากาศอบอุ่น ใช้สีเจลเกรดพรีเมียม อุปกรณ์สะอาดฆ่าเชื้อทุกครั้ง ช่างใจเย็น ดูแลแบบตัวต่อตัว</p>
+          <div class="hero-btns">
+            <a class="btn btn-line" href="https://line.me/R/ti/p/@nailsbymint" target="_blank" rel="noopener">💬 จองคิวผ่าน LINE</a>
+            <a class="btn btn-soft" href="#services">ดูราคา</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>5+</b><span>ปีประสบการณ์</span></div>
+            <div class="stat"><b>4.9★</b><span>คะแนนรีวิว</span></div>
+            <div class="stat"><b>3,000+</b><span>ลูกค้าประจำ</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hand">
+            <div class="nail"></div><div class="nail"></div><div class="nail"></div><div class="nail"></div><div class="nail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <small>Price List</small>
+        <h2>บริการ &amp; ราคา</h2>
+        <p>ราคาชัดเจน ไม่มีบวกเพิ่มหน้าร้าน</p>
+      </div>
+      <div class="price-tabs">
+        <div class="price-group">
+          <h3>💅 เล็บมือ &amp; เล็บเท้า</h3>
+          <div class="row"><div><span class="name">ทาสีเจล <span class="hot">ขายดี</span></span><span class="note">มือหรือเท้า เลือกสีได้กว่า 200 เฉด</span></div><span class="dots"></span><span class="price">350.-</span></div>
+          <div class="row"><div><span class="name">เพ้นท์ลาย / ติดอะไหล่</span><span class="note">เริ่มต้น ต่อเล็บ 1 นิ้ว</span></div><span class="dots"></span><span class="price">50.-</span></div>
+          <div class="row"><div><span class="name">ต่อเล็บ PVC + เจล</span><span class="note">ทรงอัลมอนด์ / บัลเล่ต์ / สี่เหลี่ยม</span></div><span class="dots"></span><span class="price">890.-</span></div>
+          <div class="row"><div><span class="name">ถอดเจล + บำรุงหน้าเล็บ</span><span class="note">ไม่ทำลายหน้าเล็บ</span></div><span class="dots"></span><span class="price">150.-</span></div>
+        </div>
+        <div class="price-group">
+          <h3>👁️ ขนตา &amp; สปา</h3>
+          <div class="row"><div><span class="name">ต่อขนตาเส้นต่อเส้น <span class="hot">แนะนำ</span></span><span class="note">ลุคธรรมชาติ 80–100 เส้น</span></div><span class="dots"></span><span class="price">690.-</span></div>
+          <div class="row"><div><span class="name">ลิฟติ้งขนตา + ทินท์</span><span class="note">งอนเด้งอยู่ได้ 6–8 สัปดาห์</span></div><span class="dots"></span><span class="price">590.-</span></div>
+          <div class="row"><div><span class="name">สปามือ + นวดผ่อนคลาย</span><span class="note">สครับ มาส์ก ทาครีม 30 นาที</span></div><span class="dots"></span><span class="price">390.-</span></div>
+          <div class="row"><div><span class="name">สปาเท้า + ขัดส้น</span><span class="note">แช่เกลือ ขัดผิวเท้า 45 นาที</span></div><span class="dots"></span><span class="price">450.-</span></div>
+        </div>
+      </div>
+      <p class="price-foot">* ราคาอาจเปลี่ยนแปลงตามความยาวเล็บและลวดลาย สอบถามได้ก่อนทำทุกครั้ง</p>
+    </div>
+  </section>
+
+  <!-- Promotion -->
+  <section id="promo" class="promo" aria-label="โปรโมชั่น">
+    <div class="wrap">
+      <div class="promo-box">
+        <div class="pct">20<sup>%</sup></div>
+        <div>
+          <h3>ลูกค้าใหม่ ลด 20% ทุกบริการ</h3>
+          <p>แจ้งโค้ดตอนจองคิวผ่าน LINE ใช้ได้ถึงสิ้นเดือนนี้ · มากับเพื่อน 2 ท่าน รับสปามือฟรี</p>
+          <span class="code">โค้ด: NEWMINT20</span>
+        </div>
+        <a class="btn" href="https://line.me/R/ti/p/@nailsbymint" target="_blank" rel="noopener">รับโปรเลย →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <small>Our Work</small>
+        <h2>ผลงานล่าสุด</h2>
+        <p>อัปเดตลายใหม่ทุกสัปดาห์ใน LINE ของร้าน</p>
+      </div>
+      <div class="gallery">
+        <div class="tile tall g1"><span>ออมเบรชมพู</span></div>
+        <div class="tile g2"><span>ลายทางมินิมอล</span></div>
+        <div class="tile g3"><span>นู้ดกลิตเตอร์</span></div>
+        <div class="tile g4"><span>เฟรนช์โรส</span></div>
+        <div class="tile tall g5"><span>มุกออโรร่า</span></div>
+        <div class="tile g6"><span>จุดพาสเทล</span></div>
+        <div class="tile wide g7"><span>เจลใสไซรัป</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Contact -->
+  <section id="visit" class="visit">
+    <div class="wrap">
+      <div class="sec-head">
+        <small>Visit Us</small>
+        <h2>เวลาเปิด &amp; ติดต่อ</h2>
+        <p>แนะนำจองล่วงหน้า 1 วัน เพื่อไม่ต้องรอคิว</p>
+      </div>
+      <div class="visit-grid">
+        <div class="card">
+          <h3>🕙 เวลาเปิดร้าน</h3>
+          <span class="open-now">รับจองทุกวันผ่าน LINE</span>
+          <ul class="hours">
+            <li><span>จันทร์ – ศุกร์</span><span>11:00 – 20:00</span></li>
+            <li><span>เสาร์ – อาทิตย์</span><span>10:00 – 21:00</span></li>
+            <li><span>วันหยุดนักขัตฤกษ์</span><span>10:00 – 18:00</span></li>
+            <li><span>วันพุธที่ 1 ของเดือน</span><span class="off">ปิดร้าน</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>📍 ติดต่อร้าน</h3>
+          <ul class="contact-list">
+            <li><span class="ico">📞</span><div><small>โทรศัพท์</small><a href="tel:0812345678">081-234-5678</a></div></li>
+            <li><span class="ico">💬</span><div><small>LINE Official</small><a href="https://line.me/R/ti/p/@nailsbymint" target="_blank" rel="noopener">@nailsbymint</a></div></li>
+            <li><span class="ico">🏠</span><div><small>ที่อยู่</small><p>45 ซอยตัวอย่าง ถ.สุขุมวิท กรุงเทพฯ 10110</p></div></li>
+          </ul>
+          <div class="map-ph" role="img" aria-label="พื้นที่สำหรับแผนที่ร้าน">📍 พื้นที่แผนที่ Google Maps</div>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/@nailsbymint" target="_blank" rel="noopener">💬 จองคิวผ่าน LINE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">Nails <span>by</span> Mint</span>
+    <p>© เนลส์ บาย มิ้นท์ · เว็บไซต์ตัวอย่างผลงาน</p>
+  </div>
+</footer>
+
+<a class="float-line" href="https://line.me/R/ti/p/@nailsbymint" target="_blank" rel="noopener" aria-label="จองคิวผ่าน LINE">LINE</a>
+
+</body>
+</html>

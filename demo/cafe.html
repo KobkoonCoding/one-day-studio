@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>กาแฟบ้านสวน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf6f0;
+    --ink: #2b1d14;
+    --muted: #7a6656;
+    --brand: #6f4e37;
+    --accent: #c8894b;
+    --card: #ffffff;
+    --line: #06c755;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Prompt", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+  header.hero {
+    min-height: 88vh; display: flex; align-items: center; color: #fff;
+    background:
+      linear-gradient(180deg, rgba(43,29,20,.35), rgba(43,29,20,.85)),
+      radial-gradient(circle at 20% 20%, #a87a52 0, transparent 50%),
+      radial-gradient(circle at 80% 70%, #4a3223 0, transparent 55%),
+      #5b3f2c;
+  }
+  .hero .tag { display: inline-block; background: var(--accent); padding: 4px 14px; border-radius: 99px; font-size: 14px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(40px, 9vw, 72px); font-weight: 700; line-height: 1.1; }
+  .hero p { font-size: 18px; opacity: .9; margin: 16px 0 28px; max-width: 520px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { padding: 14px 24px; border-radius: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-line { background: var(--line); color: #fff; }
+  .btn-ghost { border: 2px solid rgba(255,255,255,.7); color: #fff; }
+
+  section { padding: 64px 0; }
+  h2 { font-size: 32px; margin-bottom: 8px; color: var(--brand); }
+  .sub { color: var(--muted); margin-bottom: 32px; }
+
+  .menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .item { background: var(--card); border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+  .item .emoji { font-size: 40px; }
+  .item h3 { margin: 8px 0 4px; font-size: 18px; }
+  .item .desc { color: var(--muted); font-size: 14px; }
+  .item .price { margin-top: 12px; font-weight: 700; color: var(--accent); font-size: 20px; }
+  .badge { font-size: 12px; background: #fde7d1; color: var(--brand); padding: 2px 8px; border-radius: 6px; margin-left: 6px; }
+
+  .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .box { background: var(--card); border-radius: 16px; padding: 24px; }
+  .box h3 { color: var(--brand); margin-bottom: 8px; }
+  .map { width: 100%; height: 220px; border: 0; border-radius: 12px; margin-top: 12px; background: #eee; }
+
+  .review { background: var(--brand); color: #fff; text-align: center; }
+  .review h2 { color: #fff; }
+  .stars { color: #ffcc66; font-size: 24px; letter-spacing: 4px; }
+  .quote { font-size: 20px; max-width: 600px; margin: 16px auto; }
+
+  footer { padding: 32px 0 96px; text-align: center; color: var(--muted); font-size: 14px; }
+  .float-line {
+    position: fixed; right: 16px; bottom: 16px; background: var(--line); color: #fff;
+    padding: 14px 20px; border-radius: 99px; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">☕ เปิดทุกวัน 07:00 – 18:00</span>
+    <h1>กาแฟบ้านสวน</h1>
+    <p>กาแฟดริปจากเมล็ดดอยไทย คั่วสดทุกสัปดาห์ นั่งชิลในสวนร่มรื่น ขนมโฮมเมดอบใหม่ทุกเช้า</p>
+    <div class="btns">
+      <a class="btn btn-line" href="#contact">💬 สั่งผ่าน LINE</a>
+      <a class="btn btn-ghost" href="#menu">ดูเมนู</a>
+    </div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>เมนูแนะนำ</h2>
+    <p class="sub">เลือกระดับความหวานได้ทุกแก้ว</p>
+    <div class="menu">
+      <div class="item"><div class="emoji">☕</div><h3>อเมริกาโน่เย็น <span class="badge">ขายดี</span></h3><p class="desc">เมล็ดดอยช้าง คั่วกลาง หอมช็อกโกแลต</p><div class="price">55.-</div></div>
+      <div class="item"><div class="emoji">🥛</div><h3>ลาเต้มะพร้าว</h3><p class="desc">นมมะพร้าวสดเข้ากับเอสเปรสโซ่</p><div class="price">70.-</div></div>
+      <div class="item"><div class="emoji">🍵</div><h3>มัทฉะลาเต้</h3><p class="desc">มัทฉะเกรดพิธีชงจากอูจิ</p><div class="price">75.-</div></div>
+      <div class="item"><div class="emoji">🫖</div><h3>ดริปซิงเกิลออริจิน</h3><p class="desc">เปลี่ยนเมล็ดทุกสัปดาห์ ถามบาริสต้าได้</p><div class="price">90.-</div></div>
+      <div class="item"><div class="emoji">🥐</div><h3>ครัวซองต์เนยสด <span class="badge">อบเช้า</span></h3><p class="desc">กรอบนอก นุ่มใน เนยฝรั่งเศส</p><div class="price">65.-</div></div>
+      <div class="item"><div class="emoji">🍰</div><h3>บานอฟฟี่พาย</h3><p class="desc">กล้วยหอม คาราเมลเค็ม วิปครีม</p><div class="price">85.-</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="review">
+  <div class="wrap">
+    <h2>ลูกค้าพูดถึงเรา</h2>
+    <div class="stars">★★★★★</div>
+    <p class="quote">"บรรยากาศดีมาก กาแฟหอม ขนมอร่อย นั่งทำงานได้ทั้งวัน"</p>
+    <p>— รีวิวจาก Google Maps</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>มาหาเรา</h2>
+    <p class="sub">มีที่จอดรถ 10 คัน · Wi-Fi ฟรี · รับสั่งกลับบ้าน</p>
+    <div class="info">
+      <div class="box">
+        <h3>📍 ที่อยู่</h3>
+        <p>123 ถนนตัวอย่าง ต.ในเมือง อ.เมือง จ.เชียงใหม่ 50000</p>
+        <div class="map" role="img" aria-label="พื้นที่แสดงแผนที่ Google Maps"></div>
+      </div>
+      <div class="box">
+        <h3>📞 ติดต่อ</h3>
+        <p>โทร: 081-234-5678</p>
+        <p>LINE: @baansuancoffee</p>
+        <p>Facebook: กาแฟบ้านสวน</p>
+        <br>
+        <h3>🕖 เวลาเปิด</h3>
+        <p>จันทร์ – อาทิตย์ 07:00 – 18:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© กาแฟบ้านสวน · เว็บไซต์ตัวอย่างผลงาน</footer>
+
+<a class="float-line" href="#contact">💬 LINE</a>
+
+</body>
+</html>
